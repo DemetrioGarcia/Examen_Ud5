@@ -11,13 +11,6 @@ public class Organizador {
     private String edicion;
     private ArrayList<Corredor> corredores;
 
-    public Organizador(){
-        contadorEdicion++;
-        this.nombre = NOMBREDEF;
-        this.edicion = String.valueOf(contadorEdicion);
-        corredores = new ArrayList<Corredor>();
-    }
-
     public Organizador(String edicion){
         contadorEdicion++;
         this.nombre = NOMBREDEF;
@@ -26,16 +19,12 @@ public class Organizador {
     }
 
     public void inscribir_corredor(Corredor corredor){
+        System.out.println("Nuevo corredor inscrito Nombre: "+corredor.getNombre()+"con dorsal: "+corredor.getDorsal());
         corredores.add(corredor);
     }
 
-    public ArrayList<Corredor> getCorredores() {
+    public ArrayList<Corredor> getCorredores(){
         return corredores;
-    }
-
-    @Override
-    public String toString(){
-        return "Organizador [nombre= "+this.nombre+", edicion= "+this.edicion+", listaCorredores= "+getCorredores();
     }
 
     public void mostrarCorredores() {
@@ -48,4 +37,10 @@ public class Organizador {
     public void calcularDonacion(Corredor corredor) {
         System.out.println("El corredor "+corredor.getNombre()+" ha conseguido una donación de "+corredor.getImporte_vuelta()*corredor.getVueltas_completadas()+"€");
     }
+
+    @Override
+    public String toString(){
+        return "Organizador [nombre= "+this.nombre+", edicion= "+this.edicion+", listaCorredores= "+getCorredores();
+    }
+
 }

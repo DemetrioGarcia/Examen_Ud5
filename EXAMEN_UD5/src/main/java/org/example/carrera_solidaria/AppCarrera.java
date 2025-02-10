@@ -20,8 +20,11 @@ public class AppCarrera {
         iesmutxamel.inscribir_corredor(corredor2);
         System.out.println(iesmutxamel);
 
+        System.out.println();
         //a)
         iesmutxamel.mostrarCorredores();
+
+        System.out.println();
         //b)
         corredor1.setNumero_vueltas(15);
         iesmutxamel.calcularDonacion(corredor1);

@@ -14,15 +14,6 @@ public class Corredor {
     private double importe_vuelta;
     private int vueltas_completadas;
 
-    public Corredor (String nombre){
-        numdorsal++;
-        this.nombre = nombre;
-        this.dorsal = numdorsal;
-        listaPatrocinadores = new ArrayList<>();
-        this.importe_vuelta = IMP_VUELTADEF;
-        this.vueltas_completadas = 0;
-    }
-
     public Corredor (String nombre, double importe_vuelta){
         numdorsal++;
         this.nombre = nombre;
@@ -60,11 +51,12 @@ public class Corredor {
         this.vueltas_completadas = vueltas_completadas;
     }
 
-    public void insertarPatrocinador(String patrocinador) {
-        listaPatrocinadores.add(patrocinador);
-    }
+//    public void insertarPatrocinador(String patrocinador) {
+//        listaPatrocinadores.add(patrocinador);
+//    }
 
     public void insertarPatrocinador(String ... patrocinador) {
+        System.out.println("Nuevos patrocinadores añadidos para el corredor "+this.nombre);
         listaPatrocinadores.add(Arrays.toString(patrocinador));
     }
 
